@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CareerByteCode DevOps Internship - real production patterns on AWS and Azure, built in your own cloud and reviewed by senior engineers. Starts June 8. Applications open. Remote, self-paced, evidence-based.">
+<meta property="og:title" content="DevOps Internship That Looks Like the Job - CareerByteCode">
+<meta property="og:description" content="Real production patterns on AWS + Azure. You build, in your own cloud, reviewed by senior engineers. Starts June 8 - applications open. Remote. Portfolio-ready.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerbytecode.github.io/internship/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c1220">
+<link rel="canonical" href="https://careerbytecode.github.io/internship/">
+<link rel="icon" href="cbc - logo.png" type="image/png">
+<title>DevOps Internship | CareerByteCode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600;700&display=optional" rel="stylesheet">
+<link rel="stylesheet" href="shared-premium.css">
+<style>
+
+/* ===== HERO ===== */
+.intern-hero{min-height:92vh;padding:0;background:#060d1a;position:relative;overflow:hidden;}
+.intern-hero__content{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:92vh;padding:calc(var(--nav-h) + var(--sp-8)) var(--sp-6) var(--sp-8);text-align:center;}
+
+.intern-hero-mesh{position:absolute;inset:-50%;width:200%;height:200%;background:
+  radial-gradient(ellipse at 15% 50%,rgba(14,165,233,0.4) 0%,transparent 50%),
+  radial-gradient(ellipse at 85% 20%,rgba(37,99,235,0.35) 0%,transparent 50%),
+  radial-gradient(ellipse at 55% 85%,rgba(139,92,246,0.28) 0%,transparent 50%),
+  radial-gradient(ellipse at 35% 30%,rgba(16,185,129,0.18) 0%,transparent 50%);
+animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;filter:blur(50px);}
+@keyframes imesh-morph{
+  0%{transform:translate(0,0) rotate(0deg) scale(1);}
+  25%{transform:translate(4%,-3%) rotate(2deg) scale(1.04);}
+  50%{transform:translate(-3%,4%) rotate(-2deg) scale(0.97);}
+  75%{transform:translate(3%,2%) rotate(3deg) scale(1.03);}
+  100%{transform:translate(0,0) rotate(0deg) scale(1);}
+}
+.intern-hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.5;pointer-events:none;will-change:transform;}
+.intern-hero-orb--1{width:540px;height:540px;background:radial-gradient(circle,rgba(14,165,233,0.45),transparent 70%);top:-15%;left:-8%;animation:iorb1 22s ease-in-out infinite;}
+.intern-hero-orb--2{width:400px;height:400px;background:radial-gradient(circle,rgba(37,99,235,0.4),transparent 70%);bottom:-8%;right:-5%;animation:iorb2 28s ease-in-out infinite;}
+.intern-hero-orb--3{width:280px;height:280px;background:radial-gradient(circle,rgba(139,92,246,0.32),transparent 70%);top:50%;left:55%;animation:iorb3 18s ease-in-out infinite;}
+@keyframes iorb1{0%,100%{transform:translate(0,0);}50%{transform:translate(50px,30px);}}
+@keyframes iorb2{0%,100%{transform:translate(0,0);}50%{transform:translate(-40px,-30px);}}
+@keyframes iorb3{0%,100%{transform:translate(0,0);}50%{transform:translate(60px,-40px);}}
+
+.intern-hero__kicker{font-family:var(--font-mono);font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(56,189,248,0.95);background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.25);padding:6px 18px;border-radius:var(--r-full);margin-bottom:var(--sp-4);display:inline-flex;align-items:center;gap:8px;}
+.intern-hero__kicker-dot{width:6px;height:6px;background:#38bdf8;border-radius:50%;box-shadow:0 0 8px #38bdf8;animation:ikdot 2s ease-in-out infinite;}
+@keyframes ikdot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.7);}}
+
+.intern-hero__title{font-size:clamp(2.4rem,6.2vw,4.6rem);font-weight:800;letter-spacing:-0.045em;line-height:1.04;margin-bottom:var(--sp-3);max-width:980px;}
+.intern-hero__title .line{display:block;color:#e2e8f0;}
+.intern-hero__title .glow{
+  background:linear-gradient(90deg,#38bdf8 0%,#60a5fa 35%,#a78bfa 55%,rgba(255,255,255,0.95) 58%,#a78bfa 61%,#60a5fa 80%,#38bdf8 100%);
+  background-size:220% 100%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 24px rgba(14,165,233,0.5));
+  animation:ititle-shimmer 5s ease-in-out infinite;}
+@keyframes ititle-shimmer{0%{background-position:120% 50%;}100%{background-position:-80% 50%;}}
+
+.intern-hero__sub{font-size:clamp(1rem,2.1vw,1.28rem);color:rgba(255,255,255,0.6);max-width:720px;line-height:1.7;margin-bottom:var(--sp-3);}
+.intern-hero__sub strong{color:rgba(255,255,255,0.92);font-weight:600;}
+.intern-hero__tagline{font-family:var(--font-mono);font-size:0.82rem;color:rgba(255,255,255,0.5);letter-spacing:0.04em;margin-bottom:var(--sp-5);}
+.intern-hero__tagline span{color:#34d399;font-weight:600;}
+
+/* ===== STATS BAR ===== */
+.intern-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:0;background:rgba(255,255,255,0.025);border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);}
+.intern-stat{display:flex;flex-direction:column;align-items:center;padding:var(--sp-4) var(--sp-5);flex:1;min-width:150px;border-right:1px solid rgba(255,255,255,0.07);}
+.intern-stat:last-child{border-right:none;}
+.intern-stat__num{font-size:2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;}
+.intern-stat__label{font-size:0.72rem;color:var(--text-3);font-weight:500;margin-top:6px;text-align:center;}
+
+/* ===== SHIP CARDS ===== */
+.ship-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:var(--sp-3);}
+.ship-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:var(--sp-3) var(--sp-4);position:relative;overflow:hidden;transition:all 0.25s;}
+.ship-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent-2));}
+.ship-card:hover{background:rgba(255,255,255,0.055);border-color:rgba(56,189,248,0.3);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.25);}
+.ship-card__tag{display:inline-block;font-family:var(--font-mono);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#38bdf8;background:rgba(14,165,233,0.12);border:1px solid rgba(14,165,233,0.25);padding:3px 10px;border-radius:var(--r-full);margin-bottom:var(--sp-2);}
+.ship-card__title{font-size:0.98rem;font-weight:700;color:rgba(255,255,255,0.92);line-height:1.5;}
+
+/* ===== DOMAINS ===== */
+.domain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:var(--sp-2);}
+.domain-chip{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-md);padding:14px 16px;transition:all 0.2s;}
+.domain-chip:hover{background:rgba(255,255,255,0.06);border-color:rgba(139,92,246,0.3);transform:translateX(3px);}
+.domain-chip__ico{font-size:1.15rem;line-height:1;}
+.domain-chip__txt{font-size:0.86rem;font-weight:600;color:rgba(255,255,255,0.85);}
+
+/* ===== DIFFERENT SECTION ===== */
+.diff-section{background:linear-gradient(180deg,#060d1a 0%,#09071a 45%,#0d0a1f 100%);position:relative;overflow:hidden;}
+.diff-section-orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;opacity:0.28;}
+.diff-section-orb--1{width:460px;height:460px;background:#2563eb;top:-10%;left:-5%;}
+.diff-section-orb--2{width:380px;height:380px;background:#8b5cf6;bottom:-10%;right:-5%;}
+.diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sp-3);}
+.diff-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:var(--sp-4);}
+.diff-card__ico{width:44px;height:44px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.22);margin-bottom:var(--sp-2);}
+.diff-card h3{font-size:1.05rem;margin-bottom:8px;}
+.diff-card p{font-size:0.88rem;line-height:1.65;}
+
+/* ===== EVIDENCE STRIP ===== */
+.evidence-strip{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:var(--sp-5);}
+.evidence-pill{font-family:var(--font-mono);font-size:0.74rem;font-weight:500;padding:8px 16px;border-radius:var(--r-full);background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.22);color:#6ee7b7;}
+
+/* ===== TECH STACK ===== */
+.tech-group{margin-bottom:var(--sp-4);}
+.tech-group__label{display:flex;align-items:center;gap:12px;margin-bottom:var(--sp-2);}
+.tech-group__name{font-size:0.78rem;font-weight:700;font-family:var(--font-mono);letter-spacing:0.06em;text-transform:uppercase;color:#38bdf8;white-space:nowrap;}
+.tech-group__line{flex:1;height:1px;background:linear-gradient(90deg,rgba(56,189,248,0.25),transparent);}
+.tech-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.tech-pill{font-size:0.8rem;font-weight:600;padding:6px 14px;border-radius:var(--r-full);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.78);transition:all 0.18s;}
+.tech-pill:hover{background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(56,189,248,0.3);}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.faq-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-md);overflow:hidden;transition:border-color 0.2s;}
+.faq-item[open]{border-color:rgba(56,189,248,0.3);background:rgba(255,255,255,0.045);}
+.faq-item summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:0.98rem;font-weight:600;color:rgba(255,255,255,0.9);transition:color 0.2s;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary:hover{color:#fff;}
+.faq-item summary .faq-ico{flex-shrink:0;width:22px;height:22px;position:relative;transition:transform 0.25s;color:#38bdf8;}
+.faq-item summary .faq-ico::before,.faq-item summary .faq-ico::after{content:'';position:absolute;background:currentColor;border-radius:2px;}
+.faq-item summary .faq-ico::before{top:10px;left:3px;width:16px;height:2px;}
+.faq-item summary .faq-ico::after{top:3px;left:10px;width:2px;height:16px;transition:transform 0.25s;}
+.faq-item[open] summary .faq-ico::after{transform:rotate(90deg);opacity:0;}
+.faq-item__body{padding:0 22px 20px;font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.6);}
+.faq-item__body strong{color:rgba(255,255,255,0.85);}
+
+/* ===== PRICE / APPLY ===== */
+.apply-section{background:linear-gradient(135deg,#0a1628 0%,#0d2147 50%,#0f2d6e 100%);color:#fff;position:relative;overflow:hidden;padding:var(--sp-12) var(--sp-6);}
+.apply-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:0.25;}
+.apply-orb-1{width:350px;height:350px;background:#2563eb;top:-15%;left:-8%;}
+.apply-orb-2{width:280px;height:280px;background:#06b6d4;bottom:-15%;right:-8%;}
+.apply-card{max-width:560px;margin:var(--sp-5) auto 0;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r-xl);padding:var(--sp-6) var(--sp-5);text-align:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.apply-price{font-size:3.4rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:#fff;}
+.apply-price sup{font-size:1.3rem;font-weight:700;color:#38bdf8;vertical-align:super;}
+.apply-price-note{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:6px;}
+.apply-checklist{display:flex;flex-direction:column;gap:10px;max-width:380px;margin:var(--sp-4) auto;text-align:left;}
+.apply-check-item{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:rgba(255,255,255,0.82);}
+.apply-check-item .chk{color:#34d399;font-weight:700;flex-shrink:0;}
+
+/* ===== BTN EXTRAS ===== */
+.btn--glow{box-shadow:0 0 20px rgba(14,165,233,0.4),0 4px 20px rgba(14,165,233,0.3);}
+.btn--glow:hover{box-shadow:0 0 30px rgba(14,165,233,0.5),0 8px 30px rgba(14,165,233,0.4);}
+.btn--whatsapp{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:0 4px 16px rgba(37,211,102,0.3);border:none;}
+.btn--whatsapp:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.45);}
+
+@media(max-width:640px){
+  .intern-stat{min-width:46%;padding:var(--sp-3) var(--sp-2);}
+  .intern-stat__num{font-size:1.6rem;}
+  .ship-grid{grid-template-columns:1fr;}
+  .apply-price{font-size:2.8rem;}
+}
+@media print{
+  .nav,.scroll-progress,.nav__mobile,.orb,.btt,.noise,.value-bottom-bar{display:none !important;}
+  .reveal{opacity:1;transform:none;}
+  body{background:#fff;color:#000;}
+}
+</style>
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a class="nav__logo" href="#hero" aria-label="CareerByteCode home">
+    <img src="cbc - logo.png" alt="CBC" class="nav__logo-icon" width="36" height="36">
+    <span class="nav__logo-text">Career<em>ByteCode</em></span>
+  </a>
+  <div class="nav__links">
+    <a href="#about">About</a>
+    <a href="#what-you-ship">What You'll Build</a>
+    <a href="#why-different">Why It's Different</a>
+    <a href="#tech-stack">Tech Stack</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+    <a class="nav__cta" href="https://wa.link/0nmn9p" target="_blank" rel="noopener noreferrer">Apply Now</a>
+  </div>
+  <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav__mobile" role="navigation" aria-label="Mobile navigation">
+  <a href="#about">About</a>
+  <a href="#what-you-ship">What You'll Build</a>
+  <a href="#why-different">Why It's Different</a>
+  <a href="#tech-stack">Tech Stack</a>
+  <a href="#faq">FAQ</a>
+  <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode" style="margin-top:12px;"></button>
+  <a class="nav__cta" href="https://wa.link/0nmn9p" target="_blank" rel="noopener noreferrer" style="display:inline-flex;margin-top:12px;">Apply Now</a>
+</div>
+
+<main>
+
+<!-- ==================== HERO ==================== -->
+<section class="intern-hero" id="hero">
+  <div class="intern-hero-mesh"></div>
+  <div class="intern-hero-orb intern-hero-orb--1"></div>
+  <div class="intern-hero-orb intern-hero-orb--2"></div>
+  <div class="intern-hero-orb intern-hero-orb--3"></div>
+  <div class="intern-hero__content">
+    <div class="intern-hero__kicker reveal">
+      <span class="intern-hero__kicker-dot"></span>
+      Starts June 8 &middot; Applications Open
+    </div>
+    <h1 class="intern-hero__title reveal">
+      <span class="line">Real clouds. Real production patterns.</span>
+      <span class="glow">Stop watching DevOps. Start shipping it.</span>
+    </h1>
+    <p class="intern-hero__sub reveal">
+      Hands-on internships on <strong>AWS and Azure</strong>. You build, in your own cloud, reviewed by senior engineers. <strong>Real clouds, real implementation, real review.</strong>
+    </p>
+    <p class="intern-hero__tagline reveal">
+      Build the DevOps work companies actually run. <span>An internship that looks like the job.</span>
+    </p>
+    <div class="hero__actions reveal" style="justify-content:center;">
+      <a class="btn btn--primary btn--lg btn--magnetic btn--glow" href="https://wa.link/0nmn9p" target="_blank" rel="noopener noreferrer">Apply on WhatsApp &rarr;</a>
+      <a class="btn btn--outline btn--lg btn--magnetic" href="#what-you-ship">See What You'll Build</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STATS ==================== -->
+<div class="intern-stats" role="region" aria-label="Internship highlights">
+  <div class="intern-stat">
+    <div class="intern-stat__num" style="color:#38bdf8;">Jun 8</div>
+    <div class="intern-stat__label">Internship Starts</div>
+  </div>
+  <div class="intern-stat">
+    <div class="intern-stat__num" style="color:#a78bfa;"><span data-count-to="12">-</span></div>
+    <div class="intern-stat__label">DevOps Domains</div>
+  </div>
+  <div class="intern-stat">
+    <div class="intern-stat__num" style="color:#fbbf24;">2</div>
+    <div class="intern-stat__label">Real Clouds (AWS + Azure)</div>
+  </div>
+  <div class="intern-stat">
+    <div class="intern-stat__num" style="color:#34d399;">100%</div>
+    <div class="intern-stat__label">Remote &amp; Self-Paced</div>
+  </div>
+</div>
+
+<!-- ==================== ABOUT ==================== -->
+<section class="section" id="about">
+<div class="container">
+  <div class="section-header reveal">
+    <span class="section-tag">&#128640; The Program</span>
+    <h2>An internship that throws you <span class="text-gradient">straight into the work</span></h2>
+  </div>
+  <p class="reveal" style="max-width:760px;margin:0 auto;text-align:center;font-size:1.08rem;">
+    CareerByteCode's DevOps Internship drops you into <strong style="color:var(--text);">real AWS and Azure environments</strong>: the exact patterns engineering teams ship every day, handed to you as scenarios with services to use, evidence to produce, and a senior engineer waiting to review what you submit.
+  </p>
+  <p class="reveal" style="max-width:760px;margin:var(--sp-2) auto 0;text-align:center;font-size:1.08rem;">
+    No screencasts. No copy-along tutorials. <strong style="color:var(--text);">You read the brief, you build the solution, you prove it works.</strong>
+  </p>
+</div>
+</section>
+
+<!-- ==================== WHAT YOU'LL SHIP ==================== -->
+<section class="section" id="what-you-ship" style="padding-top:0;">
+<div class="container">
+  <div class="section-header reveal">
+    <span class="section-tag">&#128230; What You'll Ship</span>
+    <h2>Every project is a slice of a <span class="text-gradient">real production system</span></h2>
+    <p>A few examples of what you'll build, and have working in your own cloud.</p>
+  </div>
+  <div class="ship-grid">
+    <div class="ship-card reveal">
+      <span class="ship-card__tag">CI/CD &middot; Identity</span>
+      <div class="ship-card__title">A passwordless GitHub-to-Azure pipeline that deploys a containerized API on every push, no stored secret in sight.</div>
+    </div>
+    <div class="ship-card reveal">
+      <span class="ship-card__tag">Networking</span>
+      <div class="ship-card__title">A hub-and-spoke Azure network with segmented spokes and centralized egress, the way enterprises actually carve up a subscription.</div>
+    </div>
+    <div class="ship-card reveal">
+      <span class="ship-card__tag">GitOps &middot; Kubernetes</span>
+      <div class="ship-card__title">A multi-environment GitOps setup on EKS with ArgoCD, including sync waves and automated rollback.</div>
+    </div>
+    <div class="ship-card reveal">
+      <span class="ship-card__tag">DevSecOps &middot; Supply Chain</span>
+      <div class="ship-card__title">A supply chain that scans images, generates an SBOM, signs with cosign, and refuses to deploy anything that fails the gate.</div>
+    </div>
+    <div class="ship-card reveal">
+      <span class="ship-card__tag">FinOps</span>
+      <div class="ship-card__title">A FinOps gate that posts the cost impact of every Terraform PR before it merges.</div>
+    </div>
+    <div class="ship-card reveal">
+      <span class="ship-card__tag">Backup &amp; DR</span>
+      <div class="ship-card__title">A cluster backup and restore flow with Velero, so you can prove disaster recovery actually works.</div>
+    </div>
+  </div>
+
+  <!-- DOMAINS -->
+  <div class="reveal" style="margin-top:var(--sp-7);">
+    <div class="proj-cat-label" style="display:flex;align-items:center;gap:12px;margin-bottom:var(--sp-3);">
+      <span style="font-size:1.05rem;font-weight:800;color:#a78bfa;">&#129518; Twelve domains in total</span>
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(167,139,250,0.3),transparent);"></span>
+    </div>
+    <div class="domain-grid">
+      <div class="domain-chip"><span class="domain-chip__ico">&#127760;</span><span class="domain-chip__txt">Networking</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#128273;</span><span class="domain-chip__txt">Identity</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#128679;</span><span class="domain-chip__txt">IaC</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#128295;</span><span class="domain-chip__txt">CI/CD</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#128230;</span><span class="domain-chip__txt">Containers &amp; K8s</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#128260;</span><span class="domain-chip__txt">GitOps</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#128274;</span><span class="domain-chip__txt">DevSecOps</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#128202;</span><span class="domain-chip__txt">Observability</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#9881;&#65039;</span><span class="domain-chip__txt">Config Management</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#9878;&#65039;</span><span class="domain-chip__txt">Governance</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#128176;</span><span class="domain-chip__txt">FinOps</span></div>
+      <div class="domain-chip"><span class="domain-chip__ico">&#128451;&#65039;</span><span class="domain-chip__txt">Data</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== WHY IT'S DIFFERENT ==================== -->
+<section class="section diff-section reveal" id="why-different">
+  <div class="diff-section-orb diff-section-orb--1"></div>
+  <div class="diff-section-orb diff-section-orb--2"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="section-header reveal">
+      <span class="section-tag">&#9889; Why It's Different</span>
+      <h2>Real clouds. Your implementation. <span class="text-gradient-2">Evidence-based review.</span></h2>
+      <p>The scope reaches into the work most programs skip.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card reveal">
+        <div class="diff-card__ico">&#9729;&#65039;</div>
+        <h3>Real clouds, not a sandbox</h3>
+        <p>You work in actual AWS and Azure accounts, the same surface, limits, and behavior you'll meet on the job. No simulator, no shortcuts.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-card__ico">&#9000;&#65039;</div>
+        <h3>You write the implementation</h3>
+        <p>You build the solution from a brief, not follow keystrokes. You decide the how, then defend it.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-card__ico">&#128269;</div>
+        <h3>Reviews are evidence-based</h3>
+        <p>The command output. The responding service. The SHA-tagged image. The teardown that left nothing on the bill. A senior engineer verifies the proof.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-card__ico">&#127919;</div>
+        <h3>The work programs skip</h3>
+        <p>SBOMs, image signing, GitOps rollback, admission-control policy as code, FinOps in CI, cluster DR. The depth that sets you apart.</p>
+      </div>
+    </div>
+    <div class="evidence-strip reveal">
+      <span class="evidence-pill">$ command output</span>
+      <span class="evidence-pill">responding service</span>
+      <span class="evidence-pill">SHA-tagged image</span>
+      <span class="evidence-pill">passing scan</span>
+      <span class="evidence-pill">clean teardown</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHAT YOU WALK AWAY WITH ==================== -->
+<section class="section" id="outcome">
+<div class="container">
+  <div class="section-header reveal">
+    <span class="section-tag">&#127942; What You Walk Away With</span>
+    <h2>A portfolio you can <span class="text-gradient">defend in an interview</span></h2>
+  </div>
+  <p class="reveal" style="max-width:680px;margin:0 auto;text-align:center;font-size:1.12rem;">
+    A GitHub portfolio of working production patterns you can defend in an interview and reuse on the job.
+  </p>
+  <p class="reveal" style="max-width:680px;margin:var(--sp-3) auto 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--text);">
+    That's not <span style="color:var(--text-3);font-weight:500;">"I watched a course."</span><br>That's <span class="text-gradient">"I built it."</span>
+  </p>
+</div>
+</section>
+
+<!-- ==================== TECH STACK ==================== -->
+<section class="section" id="tech-stack" style="padding-top:0;">
+<div class="container">
+  <div class="section-header reveal">
+    <span class="section-tag">&#128736;&#65039; Tech Stack</span>
+    <h2>The exact tools <span class="text-gradient-2">teams ship with</span></h2>
+    <p>Industry-standard, production-grade. Nothing toy.</p>
+  </div>
+
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Cloud</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">AWS</span><span class="tech-pill">Microsoft Azure</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Infrastructure as Code</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Terraform</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">CI/CD</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">GitHub Actions</span><span class="tech-pill">Azure DevOps Pipelines</span><span class="tech-pill">AWS CodePipeline</span><span class="tech-pill">AWS CodeBuild</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Containers &amp; Orchestration</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Docker</span><span class="tech-pill">Kubernetes (AKS, EKS)</span><span class="tech-pill">Helm 4</span><span class="tech-pill">Azure Container Apps</span><span class="tech-pill">Amazon ECS</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">GitOps</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">ArgoCD</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">DevSecOps &amp; Supply Chain</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">SonarQube</span><span class="tech-pill">Trivy</span><span class="tech-pill">Syft</span><span class="tech-pill">cosign</span><span class="tech-pill">Kyverno</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Observability</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Prometheus</span><span class="tech-pill">Grafana</span><span class="tech-pill">Azure Monitor</span><span class="tech-pill">Log Analytics</span><span class="tech-pill">Amazon CloudWatch</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Configuration Management</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Ansible</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Identity &amp; Access</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Entra ID</span><span class="tech-pill">Workload Identity Federation (OIDC)</span><span class="tech-pill">AWS IAM</span><span class="tech-pill">Managed Identities</span><span class="tech-pill">RBAC</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Secrets</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Azure Key Vault</span><span class="tech-pill">AWS Secrets Manager</span><span class="tech-pill">Secrets Store CSI Driver</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Networking</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">VNet</span><span class="tech-pill">VPC</span><span class="tech-pill">Private Endpoint</span><span class="tech-pill">PrivateLink</span><span class="tech-pill">NSGs</span><span class="tech-pill">Security Groups</span><span class="tech-pill">NAT Gateway</span><span class="tech-pill">Application Gateway for Containers</span><span class="tech-pill">Gateway API</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Governance &amp; FinOps</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Azure Policy</span><span class="tech-pill">AWS Config</span><span class="tech-pill">Infracost</span><span class="tech-pill">Azure Cost Management</span><span class="tech-pill">AWS Budgets</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Backup &amp; DR</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Velero</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Data</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Azure Database for PostgreSQL Flexible Server</span></div>
+  </div>
+  <div class="tech-group reveal">
+    <div class="tech-group__label"><span class="tech-group__name">Reference App Stack</span><span class="tech-group__line"></span></div>
+    <div class="tech-pills"><span class="tech-pill">Python</span><span class="tech-pill">Flask</span></div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="section" id="faq" style="padding-top:0;">
+<div class="container">
+  <div class="section-header reveal">
+    <span class="section-tag">&#10067; FAQ</span>
+    <h2>Questions, <span class="text-gradient">answered straight</span></h2>
+  </div>
+  <div class="faq-list reveal">
+    <details class="faq-item" open>
+      <summary>When does it start and how do I register?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">The internship <strong>starts June 8</strong>, and <strong>applications are open now</strong>. Register by messaging us on WhatsApp: <a href="https://wa.link/0nmn9p" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:600;">apply here &rarr;</a></div>
+    </details>
+    <details class="faq-item">
+      <summary>Is this remote?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">Yes. The whole program runs online. You work from wherever you are, in your own cloud accounts, on your own schedule.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I do this alongside a job?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">Most candidates do. Projects are <strong>two to six hours of active work each</strong>, and you set the pace.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Are the projects AWS or Azure?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">Both. The catalog <strong>leans Azure</strong>, with a solid block of work on <strong>AWS</strong>, so you build real depth on Azure while still shipping on AWS.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What does the cloud cost?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">Small. Most projects come in at <strong>cents to a few dollars each</strong> if you tear down the same day. You set a budget alert on day one as part of the program. Cluster-based projects run a bit higher, and we show you how to share one cluster across several projects to keep the total down.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need to be an expert to apply?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">No. You need <strong>Linux, Git, a terminal, and a working understanding of one cloud</strong>. Depth gets built inside the program, not before it.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What if I get stuck?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">Our team is on hand. A senior engineer will help you unblock <strong>without solving it for you</strong>, the way a good lead does in a real job.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How do you decide a project is done?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">Each project ships with a concrete <strong>Definition of Done</strong>: specific command output, a responding service, a tagged image, a passing scan, a clean teardown. You produce the evidence, we verify it.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What do I get at the end?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">A GitHub portfolio of working production patterns and the proof you completed them. We don't promise placement, but we set you up with work you can actually <strong>defend in an interview</strong>.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Do I keep the code I write?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">Yes. It lives in your own GitHub <strong>from day one</strong>.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Is there a program fee?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body"><strong>&#8377;2,000 INR.</strong></div>
+    </details>
+    <details class="faq-item">
+      <summary>How do I apply?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">Message us on WhatsApp and we'll get you started. <a href="https://wa.link/0nmn9p" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:600;">Apply here &rarr;</a></div>
+    </details>
+  </div>
+</div>
+</section>
+
+<!-- ==================== APPLY CTA ==================== -->
+<section class="apply-section reveal" id="apply">
+  <div class="apply-orb apply-orb-1"></div>
+  <div class="apply-orb apply-orb-2"></div>
+  <div class="container" style="text-align:center;position:relative;z-index:2;">
+    <h2 class="reveal" style="color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);">Real Clouds. Real Review.<br><span style="background:linear-gradient(135deg,#38bdf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">A Portfolio You Can Defend.</span></h2>
+    <p class="reveal" style="max-width:560px;margin:var(--sp-2) auto 0;color:rgba(255,255,255,0.6);">Stop watching DevOps. Start shipping it, in your own AWS and Azure accounts, reviewed by senior engineers. <strong style="color:#fff;">Starts June 8 &middot; applications open now.</strong></p>
+
+    <div class="apply-card reveal">
+      <div style="font-family:var(--font-mono);font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;">Program Fee</div>
+      <div class="apply-price"><sup>&#8377;</sup>2,000 <span style="font-size:1.1rem;font-weight:600;color:rgba(255,255,255,0.6);">INR</span></div>
+      <div class="apply-price-note">One-time &middot; cloud usage billed separately (cents to a few dollars per project)</div>
+      <div class="apply-checklist">
+        <div class="apply-check-item"><span class="chk">&#10003;</span> Production projects across 12 DevOps domains</div>
+        <div class="apply-check-item"><span class="chk">&#10003;</span> Real AWS + Azure: your own accounts</div>
+        <div class="apply-check-item"><span class="chk">&#10003;</span> Evidence-based review by senior engineers</div>
+        <div class="apply-check-item"><span class="chk">&#10003;</span> GitHub portfolio you own from day one</div>
+        <div class="apply-check-item"><span class="chk">&#10003;</span> Remote &amp; self-paced: do it alongside a job</div>
+      </div>
+      <div class="hero__actions reveal" style="justify-content:center;margin-top:var(--sp-3);">
+        <a class="btn btn--primary btn--lg btn--magnetic btn--glow" href="https://wa.link/0nmn9p" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;">Apply on WhatsApp &rarr;</a>
+      </div>
+    </div>
+
+    <div class="hero__actions reveal" style="justify-content:center;margin-top:var(--sp-4);">
+      <a class="btn btn--whatsapp btn--lg btn--magnetic" href="https://chat.whatsapp.com/LZcOu7p3NWRAW7ZuimtTPn" target="_blank" rel="noopener noreferrer">&#128172;&nbsp; Join WhatsApp Community</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer__title">We don't just teach tech - <em>we create leaders</em></div>
+  <div class="footer__sub">CareerByteCode &middot; DevOps Internships on Real AWS &amp; Azure</div>
+  <div class="footer__links">
+    <a href="#about">About</a>
+    <a href="#what-you-ship">What You'll Build</a>
+    <a href="#faq">FAQ</a>
+    <a href="#apply">Apply</a>
+    <a href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/careerbytecode" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://youtube.com/@CareerByteCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://chat.whatsapp.com/LZcOu7p3NWRAW7ZuimtTPn" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  </div>
+  <div class="footer__email"><a href="mailto:community@careerbytecode.com">community@careerbytecode.com</a></div>
+  <div class="footer__copy">&copy; 2025 CareerByteCode. All rights reserved.</div>
+</footer>
+
+<!-- MOBILE BOTTOM APPLY BAR -->
+<div class="value-bottom-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:48;background:rgba(5,9,20,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(56,189,248,0.18);padding:10px 16px;align-items:center;justify-content:space-between;gap:10px;" aria-label="Apply">
+  <div class="vbb-info">
+    <strong style="display:block;font-size:0.88rem;font-weight:700;color:#fff;">&#8377;2,000 &middot; Starts Jun 8</strong>
+    <span style="font-size:0.7rem;color:rgba(255,255,255,0.45);">Real AWS + Azure &middot; Senior-reviewed</span>
+  </div>
+  <a class="vbb-btn" href="https://wa.link/0nmn9p" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;font-size:0.8rem;font-weight:700;padding:10px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 16px rgba(37,99,235,0.4);">Apply &rarr;</a>
+</div>
+
+<style>
+@media(max-width:1100px){
+  .value-bottom-bar{display:flex !important;}
+  body{padding-bottom:64px;}
+}
+</style>
+
+<button class="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
+
+<script src="shared-premium.js" defer></script>
+</body>
+</html>
