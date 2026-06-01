@@ -25,5 +25,6 @@ The `og:url` and `canonical` tags in `index.html` currently point to
 or a custom domain differs.
 
 ## Apply link
-The "Apply" CTAs point to `https://wa.link/0nmn9p`. Swap this if a dedicated
-internship WhatsApp link or application form is used.
+All "Apply" / contact CTAs point to the internship WhatsApp group:
+`https://chat.whatsapp.com/GprhYKmnxGK5IiCNEwIh9P`. Swap this if the group
+link changes or an application form is used.
