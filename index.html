@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CareerByteCode DevOps Internship - real production patterns on AWS and Azure, built in your own cloud and reviewed by senior engineers. Starts June 8. Applications open. Remote, self-paced, evidence-based.">
+<meta name="description" content="CareerByteCode DevOps Internship - real production patterns on AWS and Azure, built in your own cloud and reviewed by senior engineers. Starts June 15. Applications open. Remote, self-paced, evidence-based.">
 <meta property="og:title" content="DevOps Internship That Looks Like the Job - CareerByteCode">
-<meta property="og:description" content="Real production patterns on AWS + Azure. You build, in your own cloud, reviewed by senior engineers. Starts June 8 - applications open. Remote. Portfolio-ready.">
+<meta property="og:description" content="Real production patterns on AWS + Azure. You build, in your own cloud, reviewed by senior engineers. Starts June 15 - applications open. Remote. Portfolio-ready.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://careerbytecode.github.io/internship/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0c1220">
+<meta name="theme-color" content="#fdf8f4">
 <link rel="canonical" href="https://careerbytecode.github.io/internship/">
 <link rel="icon" href="cbc - logo.png" type="image/png">
 <title>DevOps Internship | CareerByteCode</title>
@@ -20,14 +20,14 @@
 <style>
 
 /* ===== HERO ===== */
-.intern-hero{min-height:92vh;padding:0;background:#060d1a;position:relative;overflow:hidden;}
+.intern-hero{min-height:92vh;padding:0;background:var(--bg);position:relative;overflow:hidden;}
 .intern-hero__content{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:92vh;padding:calc(var(--nav-h) + var(--sp-8)) var(--sp-6) var(--sp-8);text-align:center;}
 
 .intern-hero-mesh{position:absolute;inset:-50%;width:200%;height:200%;background:
-  radial-gradient(ellipse at 15% 50%,rgba(14,165,233,0.4) 0%,transparent 50%),
-  radial-gradient(ellipse at 85% 20%,rgba(37,99,235,0.35) 0%,transparent 50%),
-  radial-gradient(ellipse at 55% 85%,rgba(139,92,246,0.28) 0%,transparent 50%),
-  radial-gradient(ellipse at 35% 30%,rgba(16,185,129,0.18) 0%,transparent 50%);
+  radial-gradient(ellipse at 15% 50%,rgba(249,115,22,0.16) 0%,transparent 50%),
+  radial-gradient(ellipse at 85% 20%,rgba(251,113,133,0.14) 0%,transparent 50%),
+  radial-gradient(ellipse at 55% 85%,rgba(251,146,60,0.12) 0%,transparent 50%),
+  radial-gradient(ellipse at 35% 30%,rgba(245,158,11,0.08) 0%,transparent 50%);
 animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;filter:blur(50px);}
 @keyframes imesh-morph{
   0%{transform:translate(0,0) rotate(0deg) scale(1);}
@@ -36,110 +36,130 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
   75%{transform:translate(3%,2%) rotate(3deg) scale(1.03);}
   100%{transform:translate(0,0) rotate(0deg) scale(1);}
 }
-.intern-hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.5;pointer-events:none;will-change:transform;}
-.intern-hero-orb--1{width:540px;height:540px;background:radial-gradient(circle,rgba(14,165,233,0.45),transparent 70%);top:-15%;left:-8%;animation:iorb1 22s ease-in-out infinite;}
-.intern-hero-orb--2{width:400px;height:400px;background:radial-gradient(circle,rgba(37,99,235,0.4),transparent 70%);bottom:-8%;right:-5%;animation:iorb2 28s ease-in-out infinite;}
-.intern-hero-orb--3{width:280px;height:280px;background:radial-gradient(circle,rgba(139,92,246,0.32),transparent 70%);top:50%;left:55%;animation:iorb3 18s ease-in-out infinite;}
+.intern-hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.4;pointer-events:none;will-change:transform;}
+.intern-hero-orb--1{width:540px;height:540px;background:radial-gradient(circle,rgba(249,115,22,0.28),transparent 70%);top:-15%;left:-8%;animation:iorb1 22s ease-in-out infinite;}
+.intern-hero-orb--2{width:400px;height:400px;background:radial-gradient(circle,rgba(251,113,133,0.26),transparent 70%);bottom:-8%;right:-5%;animation:iorb2 28s ease-in-out infinite;}
+.intern-hero-orb--3{width:280px;height:280px;background:radial-gradient(circle,rgba(251,146,60,0.22),transparent 70%);top:50%;left:55%;animation:iorb3 18s ease-in-out infinite;}
 @keyframes iorb1{0%,100%{transform:translate(0,0);}50%{transform:translate(50px,30px);}}
 @keyframes iorb2{0%,100%{transform:translate(0,0);}50%{transform:translate(-40px,-30px);}}
 @keyframes iorb3{0%,100%{transform:translate(0,0);}50%{transform:translate(60px,-40px);}}
 
-.intern-hero__kicker{font-family:var(--font-mono);font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(56,189,248,0.95);background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.25);padding:6px 18px;border-radius:var(--r-full);margin-bottom:var(--sp-4);display:inline-flex;align-items:center;gap:8px;}
-.intern-hero__kicker-dot{width:6px;height:6px;background:#38bdf8;border-radius:50%;box-shadow:0 0 8px #38bdf8;animation:ikdot 2s ease-in-out infinite;}
+.intern-hero__kicker{font-family:var(--font-mono);font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#c2410c;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.28);padding:6px 18px;border-radius:var(--r-full);margin-bottom:var(--sp-4);display:inline-flex;align-items:center;gap:8px;}
+.intern-hero__kicker-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 8px rgba(249,115,22,0.8);animation:ikdot 2s ease-in-out infinite;}
 @keyframes ikdot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.7);}}
 
 .intern-hero__title{font-size:clamp(2.4rem,6.2vw,4.6rem);font-weight:800;letter-spacing:-0.045em;line-height:1.04;margin-bottom:var(--sp-3);max-width:980px;}
-.intern-hero__title .line{display:block;color:#e2e8f0;}
+.intern-hero__title .line{display:block;color:var(--text);}
 .intern-hero__title .glow{
-  background:linear-gradient(90deg,#38bdf8 0%,#60a5fa 35%,#a78bfa 55%,rgba(255,255,255,0.95) 58%,#a78bfa 61%,#60a5fa 80%,#38bdf8 100%);
+  background:linear-gradient(90deg,#f97316 0%,#fb7185 35%,#fb923c 55%,#f97316 58%,#fb923c 61%,#fb7185 80%,#f97316 100%);
   background-size:220% 100%;
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 24px rgba(14,165,233,0.5));
+  filter:drop-shadow(0 0 20px rgba(249,115,22,0.3));
   animation:ititle-shimmer 5s ease-in-out infinite;}
 @keyframes ititle-shimmer{0%{background-position:120% 50%;}100%{background-position:-80% 50%;}}
 
-.intern-hero__sub{font-size:clamp(1rem,2.1vw,1.28rem);color:rgba(255,255,255,0.6);max-width:720px;line-height:1.7;margin-bottom:var(--sp-3);}
-.intern-hero__sub strong{color:rgba(255,255,255,0.92);font-weight:600;}
-.intern-hero__tagline{font-family:var(--font-mono);font-size:0.82rem;color:rgba(255,255,255,0.5);letter-spacing:0.04em;margin-bottom:var(--sp-5);}
-.intern-hero__tagline span{color:#34d399;font-weight:600;}
+.intern-hero__sub{font-size:clamp(1rem,2.1vw,1.28rem);color:var(--text-2);max-width:720px;line-height:1.7;margin-bottom:var(--sp-3);}
+.intern-hero__sub strong{color:var(--text);font-weight:600;}
+.intern-hero__tagline{font-family:var(--font-mono);font-size:0.82rem;color:var(--text-3);letter-spacing:0.04em;margin-bottom:var(--sp-5);}
+.intern-hero__tagline span{color:var(--accent);font-weight:600;}
 
 /* ===== STATS BAR ===== */
-.intern-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:0;background:rgba(255,255,255,0.025);border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);}
-.intern-stat{display:flex;flex-direction:column;align-items:center;padding:var(--sp-4) var(--sp-5);flex:1;min-width:150px;border-right:1px solid rgba(255,255,255,0.07);}
+.intern-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:0;background:rgba(249,115,22,0.04);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.intern-stat{display:flex;flex-direction:column;align-items:center;padding:var(--sp-4) var(--sp-5);flex:1;min-width:150px;border-right:1px solid var(--border);}
 .intern-stat:last-child{border-right:none;}
 .intern-stat__num{font-size:2rem;font-weight:800;letter-spacing:-0.04em;line-height:1;}
 .intern-stat__label{font-size:0.72rem;color:var(--text-3);font-weight:500;margin-top:6px;text-align:center;}
 
 /* ===== SHIP CARDS ===== */
 .ship-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:var(--sp-3);}
-.ship-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:var(--sp-3) var(--sp-4);position:relative;overflow:hidden;transition:all 0.25s;}
+.ship-card{background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--sp-3) var(--sp-4);position:relative;overflow:hidden;transition:all 0.25s;box-shadow:0 1px 3px rgba(31,20,16,0.05);}
 .ship-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent-2));}
-.ship-card:hover{background:rgba(255,255,255,0.055);border-color:rgba(56,189,248,0.3);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,0.25);}
-.ship-card__tag{display:inline-block;font-family:var(--font-mono);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#38bdf8;background:rgba(14,165,233,0.12);border:1px solid rgba(14,165,233,0.25);padding:3px 10px;border-radius:var(--r-full);margin-bottom:var(--sp-2);}
-.ship-card__title{font-size:0.98rem;font-weight:700;color:rgba(255,255,255,0.92);line-height:1.5;}
+.ship-card:hover{border-color:rgba(249,115,22,0.4);transform:translateY(-3px);box-shadow:0 10px 30px rgba(31,20,16,0.10);}
+.ship-card__tag{display:inline-block;font-family:var(--font-mono);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c2410c;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.25);padding:3px 10px;border-radius:var(--r-full);margin-bottom:var(--sp-2);}
+.ship-card__title{font-size:0.98rem;font-weight:700;color:var(--text);line-height:1.5;}
 
 /* ===== DOMAINS ===== */
 .domain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:var(--sp-2);}
-.domain-chip{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-md);padding:14px 16px;transition:all 0.2s;}
-.domain-chip:hover{background:rgba(255,255,255,0.06);border-color:rgba(139,92,246,0.3);transform:translateX(3px);}
+.domain-chip{display:flex;align-items:center;gap:10px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px;transition:all 0.2s;box-shadow:0 1px 3px rgba(31,20,16,0.04);}
+.domain-chip:hover{border-color:rgba(249,115,22,0.4);transform:translateX(3px);box-shadow:0 4px 14px rgba(31,20,16,0.08);}
 .domain-chip__ico{font-size:1.15rem;line-height:1;}
-.domain-chip__txt{font-size:0.86rem;font-weight:600;color:rgba(255,255,255,0.85);}
+.domain-chip__txt{font-size:0.86rem;font-weight:600;color:var(--text);}
+
+/* ===== PERKS / SUPPORT ===== */
+.perk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--sp-3);}
+.perk-card{background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--sp-4);box-shadow:0 1px 3px rgba(31,20,16,0.05);transition:all 0.22s;position:relative;overflow:hidden;}
+.perk-card:hover{border-color:rgba(249,115,22,0.4);transform:translateY(-3px);box-shadow:0 10px 30px rgba(31,20,16,0.10);}
+.perk-card--featured{background:linear-gradient(135deg,rgba(249,115,22,0.08),rgba(251,113,133,0.08));border-color:rgba(249,115,22,0.3);}
+.perk-ico{width:48px;height:48px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;background:linear-gradient(135deg,rgba(249,115,22,0.12),rgba(251,113,133,0.12));border:1px solid rgba(249,115,22,0.22);margin-bottom:var(--sp-2);}
+.perk-card h3{font-size:1.02rem;margin-bottom:6px;color:var(--text);}
+.perk-card p{font-size:0.88rem;line-height:1.6;color:var(--text-2);}
+.perk-badge{position:absolute;top:14px;right:14px;font-family:var(--font-mono);font-size:0.55rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#c2410c;background:rgba(249,115,22,0.14);border:1px solid rgba(249,115,22,0.3);padding:2px 9px;border-radius:var(--r-full);}
+.apply-price--cta{font-size:1.9rem;line-height:1.2;}
+
+/* ===== DARK-MODE ACCENT LEGIBILITY ===== */
+[data-theme="dark"] .intern-hero__kicker,
+[data-theme="dark"] .ship-card__tag,
+[data-theme="dark"] .tech-group__name,
+[data-theme="dark"] .evidence-pill,
+[data-theme="dark"] .perk-badge{color:#fdba74;}
 
 /* ===== DIFFERENT SECTION ===== */
-.diff-section{background:linear-gradient(180deg,#060d1a 0%,#09071a 45%,#0d0a1f 100%);position:relative;overflow:hidden;}
-.diff-section-orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;opacity:0.28;}
-.diff-section-orb--1{width:460px;height:460px;background:#2563eb;top:-10%;left:-5%;}
-.diff-section-orb--2{width:380px;height:380px;background:#8b5cf6;bottom:-10%;right:-5%;}
+.diff-section{background:linear-gradient(180deg,var(--bg) 0%,#fbeee3 50%,var(--bg) 100%);position:relative;overflow:hidden;}
+.diff-section-orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;opacity:0.3;}
+.diff-section-orb--1{width:460px;height:460px;background:#fdba74;top:-10%;left:-5%;}
+.diff-section-orb--2{width:380px;height:380px;background:#fda4af;bottom:-10%;right:-5%;}
 .diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sp-3);}
-.diff-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-lg);padding:var(--sp-4);}
-.diff-card__ico{width:44px;height:44px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.22);margin-bottom:var(--sp-2);}
+.diff-card{background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--sp-4);box-shadow:0 1px 3px rgba(31,20,16,0.05);}
+.diff-card__ico{width:44px;height:44px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.22);margin-bottom:var(--sp-2);}
 .diff-card h3{font-size:1.05rem;margin-bottom:8px;}
 .diff-card p{font-size:0.88rem;line-height:1.65;}
 
 /* ===== EVIDENCE STRIP ===== */
 .evidence-strip{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:var(--sp-5);}
-.evidence-pill{font-family:var(--font-mono);font-size:0.74rem;font-weight:500;padding:8px 16px;border-radius:var(--r-full);background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.22);color:#6ee7b7;}
+.evidence-pill{font-family:var(--font-mono);font-size:0.74rem;font-weight:500;padding:8px 16px;border-radius:var(--r-full);background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.25);color:#c2410c;}
 
 /* ===== TECH STACK ===== */
 .tech-group{margin-bottom:var(--sp-4);}
 .tech-group__label{display:flex;align-items:center;gap:12px;margin-bottom:var(--sp-2);}
-.tech-group__name{font-size:0.78rem;font-weight:700;font-family:var(--font-mono);letter-spacing:0.06em;text-transform:uppercase;color:#38bdf8;white-space:nowrap;}
-.tech-group__line{flex:1;height:1px;background:linear-gradient(90deg,rgba(56,189,248,0.25),transparent);}
+.tech-group__name{font-size:0.78rem;font-weight:700;font-family:var(--font-mono);letter-spacing:0.06em;text-transform:uppercase;color:#c2410c;white-space:nowrap;}
+.tech-group__line{flex:1;height:1px;background:linear-gradient(90deg,rgba(249,115,22,0.3),transparent);}
 .tech-pills{display:flex;flex-wrap:wrap;gap:8px;}
-.tech-pill{font-size:0.8rem;font-weight:600;padding:6px 14px;border-radius:var(--r-full);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.78);transition:all 0.18s;}
-.tech-pill:hover{background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(56,189,248,0.3);}
+.tech-pill{font-size:0.8rem;font-weight:600;padding:6px 14px;border-radius:var(--r-full);background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-2);transition:all 0.18s;}
+.tech-pill:hover{background:#fff;color:var(--text);border-color:rgba(249,115,22,0.4);box-shadow:0 2px 8px rgba(31,20,16,0.06);}
 
 /* ===== FAQ ===== */
 .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
-.faq-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-md);overflow:hidden;transition:border-color 0.2s;}
-.faq-item[open]{border-color:rgba(56,189,248,0.3);background:rgba(255,255,255,0.045);}
-.faq-item summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:0.98rem;font-weight:600;color:rgba(255,255,255,0.9);transition:color 0.2s;}
+.faq-item{background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;transition:border-color 0.2s;box-shadow:0 1px 3px rgba(31,20,16,0.04);}
+.faq-item[open]{border-color:rgba(249,115,22,0.4);background:rgba(249,115,22,0.04);}
+.faq-item summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:0.98rem;font-weight:600;color:var(--text);transition:color 0.2s;}
 .faq-item summary::-webkit-details-marker{display:none;}
-.faq-item summary:hover{color:#fff;}
-.faq-item summary .faq-ico{flex-shrink:0;width:22px;height:22px;position:relative;transition:transform 0.25s;color:#38bdf8;}
+.faq-item summary:hover{color:var(--accent);}
+.faq-item summary .faq-ico{flex-shrink:0;width:22px;height:22px;position:relative;transition:transform 0.25s;color:var(--accent);}
 .faq-item summary .faq-ico::before,.faq-item summary .faq-ico::after{content:'';position:absolute;background:currentColor;border-radius:2px;}
 .faq-item summary .faq-ico::before{top:10px;left:3px;width:16px;height:2px;}
 .faq-item summary .faq-ico::after{top:3px;left:10px;width:2px;height:16px;transition:transform 0.25s;}
 .faq-item[open] summary .faq-ico::after{transform:rotate(90deg);opacity:0;}
-.faq-item__body{padding:0 22px 20px;font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.6);}
-.faq-item__body strong{color:rgba(255,255,255,0.85);}
+.faq-item__body{padding:0 22px 20px;font-size:0.9rem;line-height:1.7;color:var(--text-2);}
+.faq-item__body strong{color:var(--text);}
 
 /* ===== PRICE / APPLY ===== */
-.apply-section{background:linear-gradient(135deg,#0a1628 0%,#0d2147 50%,#0f2d6e 100%);color:#fff;position:relative;overflow:hidden;padding:var(--sp-12) var(--sp-6);}
-.apply-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:0.25;}
-.apply-orb-1{width:350px;height:350px;background:#2563eb;top:-15%;left:-8%;}
-.apply-orb-2{width:280px;height:280px;background:#06b6d4;bottom:-15%;right:-8%;}
-.apply-card{max-width:560px;margin:var(--sp-5) auto 0;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r-xl);padding:var(--sp-6) var(--sp-5);text-align:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.apply-section{background:linear-gradient(135deg,#f97316 0%,#fb7185 100%);color:#fff;position:relative;overflow:hidden;padding:var(--sp-12) var(--sp-6);}
+.apply-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:0.35;}
+.apply-orb-1{width:350px;height:350px;background:#fdba74;top:-15%;left:-8%;}
+.apply-orb-2{width:280px;height:280px;background:#fda4af;bottom:-15%;right:-8%;}
+.apply-card{max-width:560px;margin:var(--sp-5) auto 0;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.3);border-radius:var(--r-xl);padding:var(--sp-6) var(--sp-5);text-align:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
 .apply-price{font-size:3.4rem;font-weight:800;letter-spacing:-0.04em;line-height:1;color:#fff;}
-.apply-price sup{font-size:1.3rem;font-weight:700;color:#38bdf8;vertical-align:super;}
-.apply-price-note{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:6px;}
+.apply-price sup{font-size:1.3rem;font-weight:700;color:#fff7ed;vertical-align:super;}
+.apply-price-note{font-size:0.82rem;color:rgba(255,255,255,0.8);margin-top:6px;}
 .apply-checklist{display:flex;flex-direction:column;gap:10px;max-width:380px;margin:var(--sp-4) auto;text-align:left;}
-.apply-check-item{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:rgba(255,255,255,0.82);}
-.apply-check-item .chk{color:#34d399;font-weight:700;flex-shrink:0;}
+.apply-check-item{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:rgba(255,255,255,0.95);}
+.apply-check-item .chk{color:#fff;font-weight:700;flex-shrink:0;}
+.apply-section .btn--primary{background:#fff;color:#ea580c;box-shadow:0 6px 20px rgba(0,0,0,0.18);}
+.apply-section .btn--primary:hover{background:#fff7ed;color:#c2410c;box-shadow:0 10px 28px rgba(0,0,0,0.25);}
 
 /* ===== BTN EXTRAS ===== */
-.btn--glow{box-shadow:0 0 20px rgba(14,165,233,0.4),0 4px 20px rgba(14,165,233,0.3);}
-.btn--glow:hover{box-shadow:0 0 30px rgba(14,165,233,0.5),0 8px 30px rgba(14,165,233,0.4);}
+.btn--glow{box-shadow:0 0 20px rgba(249,115,22,0.35),0 4px 20px rgba(249,115,22,0.25);}
+.btn--glow:hover{box-shadow:0 0 30px rgba(249,115,22,0.45),0 8px 30px rgba(249,115,22,0.35);}
 .btn--whatsapp{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:0 4px 16px rgba(37,211,102,0.3);border:none;}
 .btn--whatsapp:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.45);}
 
@@ -174,6 +194,7 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
     <a href="#about">About</a>
     <a href="#what-you-ship">What You'll Build</a>
     <a href="#why-different">Why It's Different</a>
+    <a href="#support">What You Get</a>
     <a href="#tech-stack">Tech Stack</a>
     <a href="#faq">FAQ</a>
   </div>
@@ -187,6 +208,7 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
   <a href="#about">About</a>
   <a href="#what-you-ship">What You'll Build</a>
   <a href="#why-different">Why It's Different</a>
+  <a href="#support">What You Get</a>
   <a href="#tech-stack">Tech Stack</a>
   <a href="#faq">FAQ</a>
   <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode" style="margin-top:12px;"></button>
@@ -204,7 +226,7 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
   <div class="intern-hero__content">
     <div class="intern-hero__kicker reveal">
       <span class="intern-hero__kicker-dot"></span>
-      Starts June 8 &middot; Applications Open
+      3-Month Internship &middot; Starts June 15 &middot; Applications Open
     </div>
     <h1 class="intern-hero__title reveal">
       <span class="line">Real clouds. Real production patterns.</span>
@@ -226,19 +248,23 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
 <!-- ==================== STATS ==================== -->
 <div class="intern-stats" role="region" aria-label="Internship highlights">
   <div class="intern-stat">
-    <div class="intern-stat__num" style="color:#38bdf8;">Jun 8</div>
+    <div class="intern-stat__num" style="color:#ea580c;">3 Months</div>
+    <div class="intern-stat__label">Internship Duration</div>
+  </div>
+  <div class="intern-stat">
+    <div class="intern-stat__num" style="color:#e11d48;">Jun 15</div>
     <div class="intern-stat__label">Internship Starts</div>
   </div>
   <div class="intern-stat">
-    <div class="intern-stat__num" style="color:#a78bfa;"><span data-count-to="12">-</span></div>
+    <div class="intern-stat__num" style="color:#d97706;"><span data-count-to="12">-</span></div>
     <div class="intern-stat__label">DevOps Domains</div>
   </div>
   <div class="intern-stat">
-    <div class="intern-stat__num" style="color:#fbbf24;">2</div>
+    <div class="intern-stat__num" style="color:#ea580c;">2</div>
     <div class="intern-stat__label">Real Clouds (AWS + Azure)</div>
   </div>
   <div class="intern-stat">
-    <div class="intern-stat__num" style="color:#34d399;">100%</div>
+    <div class="intern-stat__num" style="color:#e11d48;">100%</div>
     <div class="intern-stat__label">Remote &amp; Self-Paced</div>
   </div>
 </div>
@@ -297,8 +323,8 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
   <!-- DOMAINS -->
   <div class="reveal" style="margin-top:var(--sp-7);">
     <div class="proj-cat-label" style="display:flex;align-items:center;gap:12px;margin-bottom:var(--sp-3);">
-      <span style="font-size:1.05rem;font-weight:800;color:#a78bfa;">&#129518; Twelve domains in total</span>
-      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(167,139,250,0.3),transparent);"></span>
+      <span style="font-size:1.05rem;font-weight:800;color:#c2410c;">&#129518; Twelve domains in total</span>
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(249,115,22,0.35),transparent);"></span>
     </div>
     <div class="domain-grid">
       <div class="domain-chip"><span class="domain-chip__ico">&#127760;</span><span class="domain-chip__txt">Networking</span></div>
@@ -373,6 +399,45 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
   <p class="reveal" style="max-width:680px;margin:var(--sp-3) auto 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--text);">
     That's not <span style="color:var(--text-3);font-weight:500;">"I watched a course."</span><br>That's <span class="text-gradient">"I built it."</span>
   </p>
+</div>
+</section>
+
+<!-- ==================== WHAT YOU GET / SUPPORT ==================== -->
+<section class="section" id="support" style="padding-top:0;">
+<div class="container">
+  <div class="section-header reveal">
+    <span class="section-tag">&#129309; More Than Projects</span>
+    <h2>You're <span class="text-gradient">supported the whole way</span></h2>
+    <p>This isn't drop-the-briefs-and-vanish. You get real help, real projects, and real career lift.</p>
+  </div>
+  <div class="perk-grid">
+    <div class="perk-card reveal">
+      <div class="perk-ico">&#127891;</div>
+      <h3>Expert Guidance</h3>
+      <p>Senior engineers guide your approach and review your work, the way a strong tech lead does on the job.</p>
+    </div>
+    <div class="perk-card reveal">
+      <div class="perk-ico">&#128736;&#65039;</div>
+      <h3>Technical Support When Stuck</h3>
+      <p>Hit a wall? Our team helps you unblock fast, pointing you the right way without just handing over the answer.</p>
+    </div>
+    <div class="perk-card reveal">
+      <div class="perk-ico">&#128640;</div>
+      <h3>Real-Time Projects</h3>
+      <p>Work on live, production-style projects in real AWS and Azure environments, not toy demos.</p>
+    </div>
+    <div class="perk-card reveal">
+      <div class="perk-ico">&#128226;</div>
+      <h3>Self-Branding &amp; Visibility</h3>
+      <p>Guidance on building your personal brand and putting your work out there, so the right people actually notice you.</p>
+    </div>
+    <div class="perk-card perk-card--featured reveal">
+      <span class="perk-badge">Special Access</span>
+      <div class="perk-ico">&#129302;</div>
+      <h3>AIOps Club by CareerByteCode</h3>
+      <p>Exclusive access to our AIOps Club: community, live sessions, and deep AI-for-DevOps content to keep you ahead of the curve.</p>
+    </div>
+  </div>
 </div>
 </section>
 
@@ -458,7 +523,11 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
   <div class="faq-list reveal">
     <details class="faq-item" open>
       <summary>When does it start and how do I register?<span class="faq-ico"></span></summary>
-      <div class="faq-item__body">The internship <strong>starts June 8</strong>, and <strong>applications are open now</strong>. Register by messaging us on WhatsApp: <a href="https://chat.whatsapp.com/GprhYKmnxGK5IiCNEwIh9P?s=sh&amp;p=i&amp;ilr=4&amp;amv=2" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:600;">apply here &rarr;</a></div>
+      <div class="faq-item__body">The internship <strong>starts June 15</strong>, and <strong>applications are open now</strong>. Register by messaging us on WhatsApp: <a href="https://chat.whatsapp.com/GprhYKmnxGK5IiCNEwIh9P?s=sh&amp;p=i&amp;ilr=4&amp;amv=2" target="_blank" rel="noopener noreferrer" style="color:#ea580c;font-weight:600;">apply here &rarr;</a></div>
+    </details>
+    <details class="faq-item">
+      <summary>How long is the internship?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">It runs over <strong>3 months</strong>, self-paced. Most projects are two to six hours of active work each, so you set the rhythm and fit it around your week.</div>
     </details>
     <details class="faq-item">
       <summary>Is this remote?<span class="faq-ico"></span></summary>
@@ -497,12 +566,12 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
       <div class="faq-item__body">Yes. It lives in your own GitHub <strong>from day one</strong>.</div>
     </details>
     <details class="faq-item">
-      <summary>Is there a program fee?<span class="faq-ico"></span></summary>
-      <div class="faq-item__body"><strong>&#8377;2,000 INR.</strong></div>
+      <summary>What's the program fee?<span class="faq-ico"></span></summary>
+      <div class="faq-item__body">We keep it <strong>student-friendly and flexible</strong>. Message us on WhatsApp and we'll share the current pricing and any ongoing offers. <a href="https://chat.whatsapp.com/GprhYKmnxGK5IiCNEwIh9P?s=sh&amp;p=i&amp;ilr=4&amp;amv=2" target="_blank" rel="noopener noreferrer" style="color:#ea580c;font-weight:600;">Ask us &rarr;</a></div>
     </details>
     <details class="faq-item">
       <summary>How do I apply?<span class="faq-ico"></span></summary>
-      <div class="faq-item__body">Message us on WhatsApp and we'll get you started. <a href="https://chat.whatsapp.com/GprhYKmnxGK5IiCNEwIh9P?s=sh&amp;p=i&amp;ilr=4&amp;amv=2" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:600;">Apply here &rarr;</a></div>
+      <div class="faq-item__body">Message us on WhatsApp and we'll get you started. <a href="https://chat.whatsapp.com/GprhYKmnxGK5IiCNEwIh9P?s=sh&amp;p=i&amp;ilr=4&amp;amv=2" target="_blank" rel="noopener noreferrer" style="color:#ea580c;font-weight:600;">Apply here &rarr;</a></div>
     </details>
   </div>
 </div>
@@ -513,19 +582,20 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
   <div class="apply-orb apply-orb-1"></div>
   <div class="apply-orb apply-orb-2"></div>
   <div class="container" style="text-align:center;position:relative;z-index:2;">
-    <h2 class="reveal" style="color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);">Real Clouds. Real Review.<br><span style="background:linear-gradient(135deg,#38bdf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">A Portfolio You Can Defend.</span></h2>
-    <p class="reveal" style="max-width:560px;margin:var(--sp-2) auto 0;color:rgba(255,255,255,0.6);">Stop watching DevOps. Start shipping it, in your own AWS and Azure accounts, reviewed by senior engineers. <strong style="color:#fff;">Starts June 8 &middot; applications open now.</strong></p>
+    <h2 class="reveal" style="color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);">Real Clouds. Real Review.<br><span style="background:linear-gradient(135deg,#ffffff,#ffe4d6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">A Portfolio You Can Defend.</span></h2>
+    <p class="reveal" style="max-width:560px;margin:var(--sp-2) auto 0;color:rgba(255,255,255,0.6);">Stop watching DevOps. Start shipping it, in your own AWS and Azure accounts, reviewed by senior engineers. <strong style="color:#fff;">Starts June 15 &middot; applications open now.</strong></p>
 
     <div class="apply-card reveal">
-      <div style="font-family:var(--font-mono);font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;">Program Fee</div>
-      <div class="apply-price"><sup>&#8377;</sup>2,000 <span style="font-size:1.1rem;font-weight:600;color:rgba(255,255,255,0.6);">INR</span></div>
-      <div class="apply-price-note">One-time &middot; cloud usage billed separately (cents to a few dollars per project)</div>
+      <div style="font-family:var(--font-mono);font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:8px;">Pricing</div>
+      <div class="apply-price apply-price--cta">&#128172; Contact Us for Pricing</div>
+      <div class="apply-price-note">Student-friendly &amp; flexible. Message us and we'll share the details in a minute. (Cloud usage is billed by AWS/Azure separately, usually cents to a few dollars per project.)</div>
       <div class="apply-checklist">
+        <div class="apply-check-item"><span class="chk">&#10003;</span> 3-month guided internship, self-paced</div>
         <div class="apply-check-item"><span class="chk">&#10003;</span> Production projects across 12 DevOps domains</div>
         <div class="apply-check-item"><span class="chk">&#10003;</span> Real AWS + Azure: your own accounts</div>
-        <div class="apply-check-item"><span class="chk">&#10003;</span> Evidence-based review by senior engineers</div>
+        <div class="apply-check-item"><span class="chk">&#10003;</span> Expert guidance &amp; evidence-based review</div>
+        <div class="apply-check-item"><span class="chk">&#10003;</span> Self-branding help + AIOps Club access</div>
         <div class="apply-check-item"><span class="chk">&#10003;</span> GitHub portfolio you own from day one</div>
-        <div class="apply-check-item"><span class="chk">&#10003;</span> Remote &amp; self-paced: do it alongside a job</div>
       </div>
       <div class="hero__actions reveal" style="justify-content:center;margin-top:var(--sp-3);">
         <a class="btn btn--primary btn--lg btn--magnetic btn--glow" href="https://chat.whatsapp.com/GprhYKmnxGK5IiCNEwIh9P?s=sh&amp;p=i&amp;ilr=4&amp;amv=2" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;">Apply on WhatsApp &rarr;</a>
@@ -559,12 +629,12 @@ animation:imesh-morph 22s ease-in-out infinite;pointer-events:none;z-index:0;fil
 </footer>
 
 <!-- MOBILE BOTTOM APPLY BAR -->
-<div class="value-bottom-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:48;background:rgba(5,9,20,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(56,189,248,0.18);padding:10px 16px;align-items:center;justify-content:space-between;gap:10px;" aria-label="Apply">
+<div class="value-bottom-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:48;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(249,115,22,0.25);padding:10px 16px;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -4px 20px rgba(31,20,16,0.08);" aria-label="Apply">
   <div class="vbb-info">
-    <strong style="display:block;font-size:0.88rem;font-weight:700;color:#fff;">&#8377;2,000 &middot; Starts Jun 8</strong>
-    <span style="font-size:0.7rem;color:rgba(255,255,255,0.45);">Real AWS + Azure &middot; Senior-reviewed</span>
+    <strong style="display:block;font-size:0.88rem;font-weight:700;color:var(--text);">3-Month Internship &middot; Starts Jun 15</strong>
+    <span style="font-size:0.7rem;color:var(--text-3);">Real AWS + Azure &middot; Senior-reviewed</span>
   </div>
-  <a class="vbb-btn" href="https://chat.whatsapp.com/GprhYKmnxGK5IiCNEwIh9P?s=sh&amp;p=i&amp;ilr=4&amp;amv=2" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;font-size:0.8rem;font-weight:700;padding:10px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 16px rgba(37,99,235,0.4);">Apply &rarr;</a>
+  <a class="vbb-btn" href="https://chat.whatsapp.com/GprhYKmnxGK5IiCNEwIh9P?s=sh&amp;p=i&amp;ilr=4&amp;amv=2" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#f97316,#fb7185);color:#fff;font-size:0.8rem;font-weight:700;padding:10px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 16px rgba(249,115,22,0.4);">Apply &rarr;</a>
 </div>
 
 <style>

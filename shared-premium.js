@@ -16,7 +16,7 @@
     const saved = localStorage.getItem('cbc-theme');
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if(saved) document.documentElement.setAttribute('data-theme', saved);
-    else document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.setAttribute('data-theme', 'light');
     updateToggleIcon();
     if(toggle){
       toggle.addEventListener('click', ()=>{
