@@ -117,7 +117,7 @@ small,.text-sm{font-size:0.875rem;}
 
 /* 6. AMBIENT EFFECTS */
 .noise{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
-.orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:-1;opacity:0.4;}
+.orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:-1;opacity:0.4;will-change:transform;}
 .orb-1{width:500px;height:500px;background:var(--accent);top:-10%;left:-5%;animation:orb-float-1 22s ease-in-out infinite;}
 .orb-2{width:400px;height:400px;background:var(--accent-2);bottom:-10%;right:-5%;animation:orb-float-2 26s ease-in-out infinite;}
 .orb-3{width:350px;height:350px;background:var(--accent-3);top:40%;right:20%;animation:orb-float-3 28s ease-in-out infinite;}
@@ -125,6 +125,9 @@ small,.text-sm{font-size:0.875rem;}
 @keyframes orb-float-2{0%,100%{transform:translate(0,0);}50%{transform:translate(-40px,-50px);}}
 @keyframes orb-float-3{0%,100%{transform:translate(0,0);}50%{transform:translate(-30px,60px);}}
 [data-theme="dark"] .orb{opacity:0.15;}
+/* Pause every running animation when the tab is backgrounded (toggled via JS).
+   No visual impact (tab isn't visible); stops infinite keyframes burning GPU. */
+body.anim-paused *,body.anim-paused *::before,body.anim-paused *::after{animation-play-state:paused !important;}
 
 /* 7. NAV SYSTEM */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--sp-2) var(--sp-6);height:var(--nav-h);background:transparent;transition:all var(--dur-normal) ease;}

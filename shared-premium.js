@@ -132,16 +132,22 @@
   function initTilt(){
     if(prefersReducedMotion || isTouch) return;
     $$('.card, .speaker-card, .mentor-card').forEach(card=>{
+      let tiltRaf = null, tiltX = 0, tiltY = 0;
       card.addEventListener('mousemove', e=>{
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -4;
-        const rotateY = ((x - centerX) / centerX) * 4;
-        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-      });
+        tiltX = e.clientX; tiltY = e.clientY;
+        if(tiltRaf !== null) return;            // coalesce to one write per frame
+        tiltRaf = requestAnimationFrame(()=>{
+          tiltRaf = null;
+          const rect = card.getBoundingClientRect();
+          const x = tiltX - rect.left;
+          const y = tiltY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -4;
+          const rotateY = ((x - centerX) / centerX) * 4;
+          card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+      }, {passive: true});
       card.addEventListener('mouseleave', ()=>{
         card.style.transform = '';
         card.style.transition = 'transform 0.5s ease';
@@ -187,18 +193,28 @@
     document.body.appendChild(ring);
     let mouseX = 0, mouseY = 0;
     let ringX = 0, ringY = 0;
+    let ringRaf = null;
     document.addEventListener('mousemove', e=>{
       mouseX = e.clientX;
       mouseY = e.clientY;
       dot.style.transform = `translate(${mouseX - 3}px, ${mouseY - 3}px)`;
-    });
+      // Restart the easing loop only when there's something to animate.
+      if(ringRaf === null && !document.hidden) ringRaf = requestAnimationFrame(animateRing);
+    }, {passive: true});
     function animateRing(){
       ringX += (mouseX - ringX) * 0.15;
       ringY += (mouseY - ringY) * 0.15;
       ring.style.transform = `translate(${ringX - 16}px, ${ringY - 16}px)`;
-      requestAnimationFrame(animateRing);
+      // Stop once the ring has caught up to the cursor — no idle frames.
+      if(Math.abs(mouseX - ringX) > 0.1 || Math.abs(mouseY - ringY) > 0.1){
+        ringRaf = requestAnimationFrame(animateRing);
+      } else {
+        ringRaf = null;
+      }
     }
-    animateRing();
+    document.addEventListener('visibilitychange', ()=>{
+      if(document.hidden && ringRaf !== null){ cancelAnimationFrame(ringRaf); ringRaf = null; }
+    });
     // Scale up on interactive elements
     const interactives = 'a, button, .btn, .card, .speaker-card, .mentor-card, [data-tab-btn], [data-accordion-head], .nav__hamburger, .theme-toggle, .btt';
     document.addEventListener('mouseover', e=>{
@@ -224,12 +240,18 @@
   function initMagneticButtons(){
     if(prefersReducedMotion || isTouch) return;
     $$('.btn--magnetic').forEach(btn=>{
+      let magRaf = null, magX = 0, magY = 0;
       btn.addEventListener('mousemove', e=>{
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
-      });
+        magX = e.clientX; magY = e.clientY;
+        if(magRaf !== null) return;             // coalesce to one write per frame
+        magRaf = requestAnimationFrame(()=>{
+          magRaf = null;
+          const rect = btn.getBoundingClientRect();
+          const x = magX - rect.left - rect.width / 2;
+          const y = magY - rect.top - rect.height / 2;
+          btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+        });
+      }, {passive: true});
       btn.addEventListener('mouseleave', ()=>{
         btn.style.transform = '';
         btn.style.transition = 'transform 0.4s cubic-bezier(0.34,1.56,0.64,1)';
@@ -421,8 +443,18 @@
     sections.forEach(s=> observer.observe(s));
   }
 
+  /* ── Shared: Pause CSS animations while the tab is hidden ── */
+  /* Zero visual impact (the tab isn't visible) but stops all the
+     infinite blur/orb keyframes from burning GPU in the background. */
+  function initVisibilityPause(){
+    const apply = ()=> document.body.classList.toggle('anim-paused', document.hidden);
+    document.addEventListener('visibilitychange', apply);
+    apply();
+  }
+
   /* ── Initialize Everything ── */
   function init(){
+    initVisibilityPause();
     initDarkMode();
     initNavScroll();
     initHamburger();
